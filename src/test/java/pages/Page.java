@@ -8,6 +8,6 @@ public class Page {
 	
 	public void setWebDriver(WebDriver driver) {
 		
-		this.driver = driver;			
+		Page.driver = driver;			
 	}
 }

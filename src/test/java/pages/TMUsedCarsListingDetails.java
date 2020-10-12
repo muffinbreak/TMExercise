@@ -1,6 +1,6 @@
 package pages;
 
-public class TMUsedCarsListingDetails {
+public class TMUsedCarsListingDetails extends Page {
 
 	
 	

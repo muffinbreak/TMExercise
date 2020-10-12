@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 //import org.junit.Assert;
 
@@ -22,7 +21,7 @@ public class TMUsedCars extends Page {
 
 	static List<String> usedCarBrands = new ArrayList<String>();
 
-	public static List<String> getUsedCarsBrand (WebDriver driver) {
+	public static List<String> getUsedCarsBrand () {
 
 		WebElement el = new WebDriverWait(driver, 10)
 				.until(ExpectedConditions.elementToBeClickable(TMCarBrand));
@@ -42,23 +41,26 @@ public class TMUsedCars extends Page {
 		return usedCarBrands;
 	}
 
-	public static void isBrandAvailable (WebDriver driver, String brandName) {
+	public static void isBrandAvailable (String brandName) {
 		
 		for (String brandNameFromList : usedCarBrands) {
 			
-			if (brandNameFromList.contains(brandName)) {
-				
-				System.out.println(brandName + " is present in the Used Car section");
-			}
-			else {
-				System.out.println(brandName + " is not present in the Used Car section");
-			}		
+//			Assert.assertEquals(brandNameFromList, brandName);
+			Assert.assertTrue(brandNameFromList.contains(brandName), brandName + " is not present in the Used Car section");
+			
+//			if (brandNameFromList.contains(brandName)) {
+//				
+//				System.out.println(brandName + " is present in the Used Car section");
+//			}
+//			else {
+//				System.out.println(brandName + " is not present in the Used Car section");
+//			}		
 		}
 	}
 
 
 
-	public static WebDriver navigateToMore () {		
+	public static void navigateToMore () {		
 
 		try {
 			driver.findElement(TMUsedCarsClosingSoonMore).click();			
@@ -68,7 +70,6 @@ public class TMUsedCars extends Page {
 					.until(ExpectedConditions.elementToBeClickable(TMUsedCarsClosingSoonMore));
 			el.click();
 		}		
-		return driver;
 	}
 
 

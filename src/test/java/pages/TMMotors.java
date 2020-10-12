@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,10 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class TMMotors extends Page {
 
 	static By TMCarForSale = By.xpath("//a[contains(.,'Cars for sale')]");
-	
-	static WebDriver driver = null;
 
-	public static WebDriver navigateToTabUsedCars () {		
+	public static void navigateToTabUsedCars () {		
 
 		try {
 			driver.findElement(TMCarForSale).click();			
@@ -23,7 +20,7 @@ public class TMMotors extends Page {
 					.until(ExpectedConditions.elementToBeClickable(TMCarForSale));
 			el.click();
 		}
-		return driver;
+		
 	}
 
 }

@@ -1,21 +1,16 @@
 package stepDefinitions;
 
-import static org.testng.Assert.assertEquals;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.BaseTest;
 import pages.Page;
-import pages.TMHomePage;
 import pages.TMMotors;
 import pages.TMUsedCars;
 import pages.TMUsedCarsListing;
 
-public class TMMotorsSteps extends Page {
+public class TMMotorsSteps {
 
 
 	@Given("user has navigated to the Cars for sale page")
@@ -31,12 +26,11 @@ public class TMMotorsSteps extends Page {
 		TMUsedCars.navigateToMore();
 	}
 
-	@Then("user sees more then {string} listing in the used cars category")
-	public void user_sees_more_then_listing_in_the_used_cars_category(String listing) {
+	@Then("user sees at least {string} listing in the used cars category")
+	public void user_sees_at_least_listing_in_the_used_cars_category(String listing) {
 		
-		TMUsedCarsListing.getListingNumber(driver);
-		int i = TMUsedCarsListing.listUsedCarNumber();
-		Assert.assertEquals(i, listing);
+		String nb = TMUsedCarsListing.getListingNumber();
+		Assert.assertEquals(nb, listing);
 	}
 
 }

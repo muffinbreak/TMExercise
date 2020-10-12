@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import pages.BaseTest;
 import pages.TMHomePage;
 
-public class TMHomePageSteps extends BaseTest {
+public class TMHomePageSteps {
 	
 	
 	@Given("user has navigated to the {string}")

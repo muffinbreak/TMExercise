@@ -43,13 +43,13 @@ public class BaseTest {
 	@Test
 	public static void navigateToPage() {
 		
-		TMHomePage homePageObj = new TMHomePage();
+//		TMHomePage homePageObj = new TMHomePage();
 //		TMMotors motorsObj = new TMMotors();
 //		TMUsedCars usedCarsObj = new TMUsedCars();
 //		TMUsedCarsListing usedCarsListingObj = new TMUsedCarsListing();
 
 		
-		homePageObj.navigateToTabMotors();
+//		homePageObj.navigateToTabMotors();
 //		motorsObj.navigateToTabUsedCars(driver);
 //		usedCarsObj.getUsedCarsBrand(driver);
 //		usedCarsObj.isBrandAvailable(driver, "Kia");

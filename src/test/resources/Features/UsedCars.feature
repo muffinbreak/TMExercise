@@ -30,5 +30,21 @@ Scenario: Confirming there at least 1 listing in the used car section of the web
 
 Given user has navigated to the Cars for sale page
 When user clicks on the more link 
-Then user sees more then "0" listing in the used cars category
+Then user sees at least "1" listing in the used cars category
+
+#Scenario: Check that the make Kia exists
+#
+#Given user has navigated to the Cars for sale page
+#When user scans through the brands
+#Then user confirms "Kia" brand exists 
+
+#Scenario: Confirm details of an existing Used Car listing
+#
+#Given user has navigated to the Cars for sale page
+#Given user has clicked the more... button
+#When user clicks on the listing
+#Then user confirms the details such as "Number plate", "Kilometres", "Body", "Seats", "Fuel type", "Engine"
+
+
+
 
